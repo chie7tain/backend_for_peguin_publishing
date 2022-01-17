@@ -6,7 +6,7 @@ export const createRestaurant = async (req: Request, res: Response) => {
     const newRestaurant = await Restaurant.create(req.body);
 
     res.status(201).json({
-      status: "sucess",
+      status: "success",
       data: {
         restaurant: newRestaurant,
       },
@@ -30,7 +30,7 @@ export const getAllRestaurants = async (req: Request, res: Response) => {
   try {
     const restaurants = await Restaurant.find();
     res.status(200).json({
-      status: "sucess",
+      status: "success",
       data: restaurants,
     });
   } catch (error) {
@@ -57,7 +57,7 @@ export const getRestaurantsByReg = async (req: Request, res: Response) => {
       },
     ]);
     res.status(200).json({
-      status: "sucess",
+      status: "success",
       data: restaurants,
     });
   } catch (error) {
@@ -88,7 +88,7 @@ export const getRestaurantsByBoroughAndCuisine = async (
       },
     ]);
     res.status(200).json({
-      status: "sucess",
+      status: "success",
       data: restaurants,
     });
   } catch (error) {
@@ -116,7 +116,7 @@ export const getRestaurantsByBorough = async (req: Request, res: Response) => {
       },
     ]);
     res.status(200).json({
-      status: "sucess",
+      status: "success",
       data: restaurants,
     });
   } catch (error) {
@@ -173,7 +173,7 @@ export const getRestaurantsByScore = async (req: Request, res: Response) => {
       },
     ]);
     res.status(200).json({
-      status: "sucess",
+      status: "success",
       data: restaurants,
     });
   } catch (error) {
@@ -181,7 +181,7 @@ export const getRestaurantsByScore = async (req: Request, res: Response) => {
     res.status(400).json({ status: "fail", message: error });
   }
 };
-// 6. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which prepared dish except 'American' and 'Chinees' or restaurant's name begins with letter 'Wil', using aggregation.
+// 6. Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which prepared dish except 'American' and 'Chinese' or restaurant's name begins with letter 'Wil', using aggregation.
 export const getRestaurantsByCuisine = async (req: Request, res: Response) => {
   try {
     const restaurants = await Restaurant.aggregate([
@@ -201,7 +201,7 @@ export const getRestaurantsByCuisine = async (req: Request, res: Response) => {
       },
     ]);
     res.status(200).json({
-      status: "sucess",
+      status: "success",
       data: restaurants,
     });
   } catch (error) {
@@ -229,7 +229,7 @@ export const getRestaurantsByDate = async (req: Request, res: Response) => {
       },
     ]);
     res.status(200).json({
-      status: "sucess",
+      status: "success",
       data: restaurants,
     });
   } catch (error) {

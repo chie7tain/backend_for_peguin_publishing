@@ -33,13 +33,6 @@ mongoose
     process.exit(1);
   });
 
-// "id": "author1"
-// "author": "John Doe",
-// "age": 28,
-// "address" : "5, Wall Street, Buckingham",
-// "createdAt": "2021-08-26T09:12:53.752Z",
-// "updatedAt": "2021-08-26T09:12:53.752Z",
-
 /**
  * Normalize a port into a number, string, or false.
  */
