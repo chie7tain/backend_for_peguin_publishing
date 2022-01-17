@@ -16,8 +16,17 @@ export const createRestaurant = async (req: Request, res: Response) => {
     res.status(400).json({ status: "fail", message: err });
   }
 };
-
- export const getAllRestaurants = async (req: Request, res: Response) => {
+export const getRestaurant = async (req: Request, res: Response) => {
+  try {
+    const restaurant = await Restaurant.findById(req.params.id);
+    console.log(restaurant);
+    res.status(200).json({ status: "success", message: restaurant });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ status: "fail", message: error });
+  }
+};
+export const getAllRestaurants = async (req: Request, res: Response) => {
   try {
     const restaurants = await Restaurant.find();
     res.status(200).json({
@@ -378,7 +387,7 @@ export const getRestaurantsByCuisineAndBorough = async (
     console.log(error);
     res.status(400).json({ status: "fail", message: error });
   }
-}
+};
 // 13. Write a MongoDB query to know whether all the addresses contains the street or not, using aggregation.
 export const getRestaurantsByStreet = async (req: Request, res: Response) => {
   try {
@@ -407,4 +416,4 @@ export const getRestaurantsByStreet = async (req: Request, res: Response) => {
     console.log(error);
     res.status(400).json({ status: "fail", message: error });
   }
-}
+};

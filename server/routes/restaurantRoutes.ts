@@ -2,6 +2,7 @@ import express from "express";
 
 const router = express.Router();
 import {
+  getRestaurant,
   getAllRestaurants,
   createRestaurant,
   getRestaurantsByReg,
@@ -19,8 +20,7 @@ import {
 } from "../controllers/restaurantController";
 
 router.route("/").get(getAllRestaurants);
-console.log(getAllRestaurants);
 router.route("/restaurantByReg").get(getRestaurantsByReg);
 router.route("/restaurantByCuisine").get(getRestaurantsByCuisine);
-
+router.route("/:id").get(getRestaurant);
 module.exports = router;
